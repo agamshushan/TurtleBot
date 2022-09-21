@@ -6,7 +6,7 @@ bot_loc = [Consts.START_X, 0]
 prev_loc = [Consts.START_X, 0]
 
 
-def move_soldier(direction):
+def move_bot(direction):
     global prev_loc, bot_loc
     prev_loc = bot_loc
     if direction == Consts.UP:
