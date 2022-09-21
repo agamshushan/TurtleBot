@@ -28,10 +28,13 @@ def if_on_trash():
     trash = Trash.get_trash()
     if trash[bot_loc[1]][bot_loc[0]] != Consts.EMPTY:
         Trash.remove_trash(bot_loc)
+        return 1
+    return 0
 
 
 def get_loc():
     return bot_loc
+
 
 def get_prev_loc():
     return prev_loc
