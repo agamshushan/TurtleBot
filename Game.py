@@ -48,4 +48,5 @@ def manage_game():
     return score
 
 
-
+def get_score_message():
+    return "Your score is: " + score
