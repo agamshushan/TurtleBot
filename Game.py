@@ -13,18 +13,20 @@ def manage_game():
     is_run = True
     difficulty = Consts.START_DIFF
     Trash.init_trash_list()
+    score = 0
     while is_run:
         Screen.update_starter_screen()
         keys_pressed = pygame.key.get_pressed()
         Screen.move_robot(keys_pressed)
         Screen.slide_robot()
-        TurtleBot.if_on_trash()
+        score += TurtleBot.if_on_trash()
         if time.time() - start_time % time_between_trash_moves == 0:
             Trash.move_trash()
         if time.time() - start_time == Consts.TIME_BETWEEN_DIFF:
             difficulty += 1
             change_difficulty(difficulty)
         is_run = Trash.has_eaten()
+    return score
 
 
 def change_difficulty(diff):
