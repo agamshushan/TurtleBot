@@ -8,8 +8,7 @@ max_trash_count = 2
 def init_trash_list():
     global trash_array
     for i in range(Consts.TURTLE_AMOUNT):
-        for j in range(Consts.ARRAY_SIZE):
-            trash_array[i][j] = Consts.TRASH_LIST[0]
+            trash_array.append([Consts.EMPTY] * Consts.ARRAY_SIZE)
 
 
 def move_trash():
