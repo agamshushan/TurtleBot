@@ -1,3 +1,5 @@
+import random
+
 import Consts
 import Screen
 import TurtleBot
@@ -8,7 +10,6 @@ import BeachTrash
 
 start_time = time.time()
 score = 0
-time_between_trash_moves = Consts.START_TIME_BETWEEN_TRASH
 
 
 def first_stage():
@@ -18,30 +19,31 @@ def first_stage():
 
 
 def second_stage():
-    global score
+    global score, start_time
     is_run = True
     difficulty = Consts.START_DIFF
     Trash.init_trash_list()
-
+    clock = pygame.time.Clock()
     while is_run:
+        clock.tick(Consts.FPS)
+        Trash.add_trash()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                is_run = False
         Screen.update_starter_screen()
         keys_pressed = pygame.key.get_pressed()
         Screen.move_robot(keys_pressed)
         score += TurtleBot.if_on_trash()
-        if time.time() - start_time % time_between_trash_moves == 0:
+        if int(time.time() - start_time + 1) % Consts.TIME_BETWEEN_TRASH == 0:
+            start_time += 1
             Trash.move_trash()
-        if time.time() - start_time == Consts.TIME_BETWEEN_DIFF and \
-                difficulty < Consts.MAX_DIFF:
-            difficulty += 1
-            change_difficulty(difficulty)
+        print("0")
+
+        # if int(time.time() - start_time + 1) % Consts.TIME_BETWEEN_DIFF == 0 and \
+        #         difficulty < Consts.MAX_DIFF:
+        #     difficulty += 1
+            # Trash.increase_difficulty()
         is_run = Trash.has_not_eaten()
+        print(is_run)
     return score
 
-
-def change_difficulty(diff):
-    global time_between_trash_moves, start_time
-    if diff % 2 == 1:
-        time_between_trash_moves /= 2
-        start_time = time.time()
-    else:
-        Trash.increase_difficulty()

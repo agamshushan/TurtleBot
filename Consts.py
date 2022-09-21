@@ -25,7 +25,7 @@ LEFT = 'LEFT'
 RIGHT = 'RIGHT'
 
 # GAME:
-START_TIME_BETWEEN_TRASH = 2
+TIME_BETWEEN_TRASH = 3
 TIME_BETWEEN_DIFF = 5
 MAX_DIFF = 6
 START_DIFF = 1
@@ -35,8 +35,8 @@ FPS = 60
 WINDOW_WIDTH, WINDOW_HEIGHT = 1050, 500
 WINDOW = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
-MSG_WINDOW_WIDTH, MSG_WINDOW_HEIGHT = 500, 500
-MSG_WINDOW = pygame.display.set_mode((MSG_WINDOW_WIDTH, MSG_WINDOW_HEIGHT))
+#MSG_WINDOW_WIDTH, MSG_WINDOW_HEIGHT = 500, 500
+#MSG_WINDOW = pygame.display.set_mode((MSG_WINDOW_WIDTH, MSG_WINDOW_HEIGHT))
 
 TRASH_IMAGES = {BAG: pygame.image.load(os.path.join("Bin", "bag.png")),
                 BOTTLE: pygame.image.load(os.path.join("Bin", "bottle.png")),

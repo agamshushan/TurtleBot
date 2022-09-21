@@ -8,7 +8,8 @@ prev_loc = [Consts.START_X, 0]
 
 def move_bot(direction):
     global prev_loc, bot_loc
-    prev_loc = bot_loc
+    prev_loc[0] = bot_loc[0]
+    prev_loc[1] = bot_loc[1]
     if direction == Consts.UP:
         if bot_loc[1] > 0:
             bot_loc[1] = bot_loc[1] - Consts.STEP
