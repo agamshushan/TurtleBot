@@ -13,7 +13,9 @@ def init_trash_list():
 
 
 def move_trash():
-    pass
+    global trash_array
+    prev_list = trash_array
+    for i in range()
 
 
 def get_trash():
@@ -27,7 +29,7 @@ def add_trash():
             trash_array[trash_array.index(i)][0] = get_random_trash()
 
 
-def is_on_turtle():
+def has_eaten():
     pass
 
 
