@@ -17,7 +17,7 @@ def generate_trash():
     global trash_beach
     trash_beach = new_beach()
 
-    for i in range(Consts.NUM_OF_OBSTACLES):
+    for i in range(Consts.NUM_OF_BEACH_TRASH):
         row = random.randint(0, Consts.BEACH_ROWS)
         col = random.randint(0, Consts.BEACH_COLS)
         while trash_beach[row][col] != Consts.EMPTY:
@@ -28,3 +28,15 @@ def generate_trash():
 
 def clean_trash(loc):
     trash_beach[loc[0]][loc[1]] = Consts.EMPTY
+
+
+def count_trash():
+    count = 0
+    for row in trash_beach:
+        for item in row:
+            count += 1 if item != Consts.EMPTY else 0
+    return count
+
+
+def get_trash_beach():
+    return trash_beach
