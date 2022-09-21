@@ -3,8 +3,10 @@ import Consts
 import Trash
 import TurtleBot
 
+
 def index_to_pixels(x_index, y_index):
-    return (x_index * 50, y_index * 100 + 100)
+    return x_index * 50, y_index * 100 + 100
+
 
 WINDOW = Consts.WINDOW
 # MSG_WINDOW = Consts.MSG_WINDOW
@@ -36,7 +38,6 @@ def move_robot(keys_pressed):
                 update_starter_screen()
 
 
-
 def update_starter_screen():
     background_data = pygame.transform.scale(Consts.BACKGROUND, (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
     background = pygame.Rect((0, 0), (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
@@ -47,15 +48,6 @@ def update_starter_screen():
 
     for i in range(Consts.TURTLE_AMOUNT):
         row = trash_array[i]
-        # if i % 2 != 0:
-        #     row = trash_array[i][-1::-1]
-        #     turtle_data = pygame.transform.scale(Consts.TURTLE_IMAGE, (
-        #         Consts.TURTLE_WIDTH, Consts.TURTLE_HEIGHT))
-        #     turtle = pygame.Rect(index_to_pixels(0, i),
-        #                          (Consts.TURTLE_WIDTH, Consts.TURTLE_HEIGHT))
-        #     WINDOW.blit(turtle_data, (turtle.x, turtle.y))
-
-
         for j in range(len(row)):
             if row[j] != Consts.EMPTY:
                 data = pygame.transform.scale(Consts.TRASH_IMAGES[row[j]], (Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
@@ -76,6 +68,7 @@ def update_starter_screen():
 def draw_lose_message(score):
     msg = [Consts.LOSE_MESSAGE, score]
     draw_message(msg)
+
 
 def draw_message(message):
     pygame.font.init()

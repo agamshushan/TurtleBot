@@ -1,5 +1,3 @@
-import random
-
 import Consts
 import Screen
 import TurtleBot

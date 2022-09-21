@@ -43,10 +43,6 @@ def move_trash():
         started_time = time.time()
 
 
-
-
-
-
 def get_trash():
     return trash_array
 
