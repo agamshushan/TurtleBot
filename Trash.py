@@ -15,7 +15,10 @@ def init_trash_list():
 def move_trash():
     global trash_array
     prev_list = trash_array
-    for i in range()
+    for i in range(Consts.TURTLE_AMOUNT):
+        for j in range(Consts.ARRAY_SIZE):
+            if prev_list[i][j] in Consts.TRASH_LIST and prev_list[i][j] != Consts.EMPTY:
+                trash_array[i][j+1] = prev_list[i][j]
 
 
 def get_trash():
@@ -30,7 +33,10 @@ def add_trash():
 
 
 def has_eaten():
-    pass
+    for i in trash_array:
+        if i[Consts.ARRAY_SIZE - 2] in Consts.TRASH_LIST and i[Consts.ARRAY_SIZE - 2] != Consts.EMPTY:
+            return False
+    return True
 
 
 def get_random_trash():
@@ -44,13 +50,13 @@ def get_first_trash_index(row):
 
 
 def remove_trash(index):
-    trash_array[index[1]][index[0]] = Consts.TRASH_LIST[0]
+    trash_array[index[1]][index[0]] = Consts.EMPTY
 
 
 def count_trash_in_row(row):
     count = 0
     for i in row:
-        if i in Consts.TRASH_LIST and i != Consts.TRASH_LIST[0]:
+        if i in Consts.TRASH_LIST and i != Consts.EMPTY:
             count += 1
     return count
 
