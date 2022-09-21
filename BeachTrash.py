@@ -22,8 +22,8 @@ def generate_trash():
         row = random.randint(0, 4)
         col = random.randint(0, 14)
         while trash_beach[row][col] != Consts.EMPTY:
-            row = random.randint(0, Consts.BEACH_ROWS)
-            col = random.randint(0, Consts.BEACH_COLS)
+            row = random.randint(0, Consts.BEACH_ROWS - 1)
+            col = random.randint(0, Consts.BEACH_COLS - 1)
         trash_beach[row][col] = Trash.get_random_trash()
 
 
