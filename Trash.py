@@ -8,8 +8,7 @@ started_time = None
 
 
 def init_trash_list():
-    global trash_array
-    global started_time
+    global trash_array, started_time
     started_time = time.time()
     for i in range(Consts.TURTLE_AMOUNT):
             trash_array.append([Consts.EMPTY] * Consts.ARRAY_SIZE)
