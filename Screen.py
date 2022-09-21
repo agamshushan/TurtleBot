@@ -2,6 +2,7 @@ import pygame
 import Consts
 import Trash
 import TurtleBot
+import Game
 
 
 def index_to_pixels(x_index, y_index):
@@ -45,6 +46,11 @@ def update_starter_screen():
     trash_array = Trash.get_trash()
     global robot_pixel_y
     global robot_pixel_x
+
+    font = pygame.font.SysFont(Consts.FONT_NAME, Consts.LOSE_FONT_SIZE)
+    score_msg = Game.get_score_message()
+    text_img = font.render(score_msg, True, Consts.BLACK)
+    WINDOW.blit(text_img, (400, 10))
 
     for i in range(Consts.TURTLE_AMOUNT):
         row = trash_array[i]
