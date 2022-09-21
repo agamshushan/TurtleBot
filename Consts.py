@@ -39,5 +39,5 @@ TURTLE_IMAGE = pygame.image.load(os.path.join("Bin", "turtle.png"))
 BACKGROUND = pygame.image.load(os.path.join("Bin", "sea.png"))
 
 ROBOT_WIDTH, ROBOT_HEIGHT = 50, 100
-TRASH_WIDTH, TRASH_HEIGHT = 50, 50
+TRASH_WIDTH, TRASH_HEIGHT = 50, 50 
 TURTLE_WIDTH, TURTLE_HEIGHT = 100, 100
