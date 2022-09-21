@@ -6,6 +6,7 @@ import TurtleBot
 WINDOW = Consts.WINDOW
 robot_pixel_x, robot_pixel_y = 0, 0
 
+
 def move_robot(keys_pressed):
     direction = ""
     global robot_pixel_x
@@ -32,10 +33,8 @@ def move_robot(keys_pressed):
                 update_starter_screen()
 
 
-
 def index_to_pixels(x_index, y_index):
     return (x_index * 50, y_index * 100 + 100)
-
 
 
 def update_starter_screen():
@@ -64,8 +63,6 @@ def update_starter_screen():
                 Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
                 trash = pygame.Rect((index_to_pixels(j, i)[0], index_to_pixels(j, i)[1] + 25), (Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
                 WINDOW.blit(data, (trash.x, trash.y))
-
-
 
     robot_data = pygame.transform.scale(Consts.TURTLE_BOT_IMAGE, (Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT))
     robot = pygame.Rect((robot_pixel_x, robot_pixel_y), (Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT))
