@@ -3,9 +3,12 @@ import Trash
 
 
 bot_loc = [Consts.START_X, 0]
+prev_loc = [Consts.START_X, 0]
 
 
 def move_soldier(direction):
+    global prev_loc, bot_loc
+    prev_loc = bot_loc
     if direction == Consts.UP:
         if bot_loc[1] > 0:
             bot_loc[1] = bot_loc[1] - Consts.STEP
@@ -28,3 +31,6 @@ def if_on_trash():
 
 def get_loc():
     return bot_loc
+
+def get_prev_loc():
+    return prev_loc
