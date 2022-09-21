@@ -67,3 +67,5 @@ INFO_CLEANER_BOT = ["CleanerBot is made to clean the ocean.",
                     "Over 100,000 sea animals die from plastic pollution each year.",
                     "Every year, about 8 million tons of plastic waste escapes into the oceans from coastal nations.",
                     "If CleanerBot becomes a real thing, it will help sea life and our planet as a whole"]
+
+START_MESSAGE = ["Cleaner Bot!", "Press any key to start."]
