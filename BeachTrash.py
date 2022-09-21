@@ -18,8 +18,9 @@ def generate_trash():
     trash_beach = new_beach()
 
     for i in range(Consts.NUM_OF_BEACH_TRASH):
-        row = random.randint(0, Consts.BEACH_ROWS)
-        col = random.randint(0, Consts.BEACH_COLS)
+        #row = random.randint(0, Consts.BEACH_ROWS - 1)
+        row = random.randint(0, 4)
+        col = random.randint(0, 14)
         while trash_beach[row][col] != Consts.EMPTY:
             row = random.randint(0, Consts.BEACH_ROWS)
             col = random.randint(0, Consts.BEACH_COLS)
