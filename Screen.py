@@ -60,8 +60,8 @@ def update_starter_screen():
                                  (Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT))
             WINDOW.blit(turtle_data, (turtle.x, turtle.y))
         for j in range(len(row)):
-            if j != Consts.EMPTY:
-                data = pygame.transform.scale(Consts.TRASH_IMAGES[j], (Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
+            if row[j] != Consts.EMPTY:
+                data = pygame.transform.scale(Consts.TRASH_IMAGES[row[j]], (Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
                 trash = pygame.Rect((index_to_pixels(j, i)[0], index_to_pixels(j, i)[1] + 25), (Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
                 WINDOW.blit(data, (trash.x, trash.y))
 
