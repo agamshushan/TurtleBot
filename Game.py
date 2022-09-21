@@ -4,16 +4,25 @@ import TurtleBot
 import Trash
 import pygame
 import time
+import BeachTrash
 
 start_time = time.time()
+score = 0
 time_between_trash_moves = Consts.START_TIME_BETWEEN_TRASH
 
 
-def manage_game():
+def first_stage():
+    global score
+    while BeachTrash.count_trash() > 0:
+        pass
+
+
+def second_stage():
+    global score
     is_run = True
     difficulty = Consts.START_DIFF
     Trash.init_trash_list()
-    score = 0
+
     while is_run:
         Screen.update_starter_screen()
         keys_pressed = pygame.key.get_pressed()
