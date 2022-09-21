@@ -17,7 +17,7 @@ def move_trash():
     prev_list = trash_array
     for i in range(Consts.TURTLE_AMOUNT):
         for j in range(Consts.ARRAY_SIZE):
-            if prev_list[i][j] in Consts.TRASH_LIST and prev_list[i][j] != Consts.EMPTY:
+            if prev_list[i][j] != Consts.EMPTY:
                 trash_array[i][j+1] = prev_list[i][j]
 
 
@@ -34,7 +34,7 @@ def add_trash():
 
 def has_eaten():
     for i in trash_array:
-        if i[Consts.ARRAY_SIZE - 2] in Consts.TRASH_LIST and i[Consts.ARRAY_SIZE - 2] != Consts.EMPTY:
+        if i[Consts.ARRAY_SIZE - 2] != Consts.EMPTY:
             return False
     return True
 
@@ -56,7 +56,7 @@ def remove_trash(index):
 def count_trash_in_row(row):
     count = 0
     for i in row:
-        if i in Consts.TRASH_LIST and i != Consts.EMPTY:
+        if i != Consts.EMPTY:
             count += 1
     return count
 
