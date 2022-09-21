@@ -32,6 +32,7 @@ def move_robot(keys_pressed):
                 update_starter_screen()
 
 
+
 def index_to_pixels(x_index, y_index):
     return (x_index * 50, y_index * 100 + 100)
 
