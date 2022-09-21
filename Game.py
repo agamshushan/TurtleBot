@@ -22,7 +22,8 @@ def manage_game():
         score += TurtleBot.if_on_trash()
         if time.time() - start_time % time_between_trash_moves == 0:
             Trash.move_trash()
-        if time.time() - start_time == Consts.TIME_BETWEEN_DIFF:
+        if time.time() - start_time == Consts.TIME_BETWEEN_DIFF and \
+                difficulty < Consts.MAX_DIFF:
             difficulty += 1
             change_difficulty(difficulty)
         is_run = Trash.has_eaten()
@@ -31,7 +32,7 @@ def manage_game():
 
 def change_difficulty(diff):
     global time_between_trash_moves, start_time
-    if diff % 2 == 0:
+    if diff % 2 == 1:
         time_between_trash_moves /= 2
         start_time = time.time()
     else:
