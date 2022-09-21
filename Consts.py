@@ -1,4 +1,5 @@
 import pygame
+import os
 
 TURTLE_AMOUNT = 4
 ARRAY_SIZE = 21
@@ -28,3 +29,8 @@ START_DIFF = 1
 FPS = 60
 WINDOW_WIDTH, WINDOW_HEIGHT = 420, 400
 WINDOW = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+
+TRASH_IMAGES = { BAG: pygame.image.load(os.path.join("Bin", "bag.png"))
+
+
+}

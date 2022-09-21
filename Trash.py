@@ -32,9 +32,9 @@ def add_trash():
             trash_array[trash_array.index(i)][0] = get_random_trash()
 
 
-def has_eaten():
+def has_not_eaten():
     for i in trash_array:
-        if i[Consts.ARRAY_SIZE - 2] != Consts.EMPTY:
+        if i[Consts.ARRAY_SIZE - 1] != Consts.EMPTY:
             return False
     return True
 
