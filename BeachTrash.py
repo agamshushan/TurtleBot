@@ -5,6 +5,7 @@ import Trash
 trash_beach = []
 
 
+
 def new_beach():
     empty_beach = []
     for i in range(Consts.FIELD_MATRIX_ROWS):
