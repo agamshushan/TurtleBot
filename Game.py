@@ -27,7 +27,6 @@ def second_stage():
         Screen.update_starter_screen()
         keys_pressed = pygame.key.get_pressed()
         Screen.move_robot(keys_pressed)
-        Screen.slide_robot()
         score += TurtleBot.if_on_trash()
         if time.time() - start_time % time_between_trash_moves == 0:
             Trash.move_trash()
@@ -35,7 +34,7 @@ def second_stage():
                 difficulty < Consts.MAX_DIFF:
             difficulty += 1
             change_difficulty(difficulty)
-        is_run = Trash.has_eaten()
+        is_run = Trash.has_not_eaten()
     return score
 
 

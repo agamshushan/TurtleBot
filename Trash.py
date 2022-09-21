@@ -1,7 +1,7 @@
 import Consts
 import random
 
-trash_array = [[]]
+trash_array = []
 max_trash_count = 2
 
 
