@@ -59,11 +59,7 @@ LOSE_FONT_SIZE = 100  # int(0.15 * WINDOW_WIDTH)
 LOSE_COLOR = WHITE
 LOSE_LOCATION = (0.4 * WINDOW_WIDTH, WINDOW_HEIGHT / 2 - (LOSE_FONT_SIZE / 2))
 
-PRESS_ANY_KEY = "Press any key to start"
-
-INFO_FIRST_STAGE = "Clean all the trash with your mouse"
-
-INFO_SECOND_STAGE = ["Move CleanerBot with arrow or wasd keys",
+PLAY_INFO = ["Move CleanerBot with arrow or wasd keys",
                      "Clean the trash with CleanerBot before it gets to the innocent turtles",
                      "You have 3 lives."]
 

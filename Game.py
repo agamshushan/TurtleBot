@@ -10,15 +10,19 @@ import BeachTrash
 
 start_time = time.time()
 score = 0
+# def first_stage():
+#     global score
+#     while BeachTrash.count_trash() > 0:
+#         for event in pygame.event.get():
+#             if event.type == pygame.QUIT:
+#                 is_run = False
+#             elif event.type == pygame.MOUSEBUTTONDOWN:
+#                 pygame.mouse.get_pos()
+#
+#
 
 
-def first_stage():
-    global score
-    while BeachTrash.count_trash() > 0:
-        pass
-
-
-def second_stage():
+def manage_game():
     global score, start_time
     is_run = True
     difficulty = Consts.START_DIFF
@@ -39,10 +43,6 @@ def second_stage():
             Trash.move_trash()
         print("0")
 
-        # if int(time.time() - start_time + 1) % Consts.TIME_BETWEEN_DIFF == 0 and \
-        #         difficulty < Consts.MAX_DIFF:
-        #     difficulty += 1
-            # Trash.increase_difficulty()
         is_run = Trash.has_not_eaten()
         print(is_run)
     return score
