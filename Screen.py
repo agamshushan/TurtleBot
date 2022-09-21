@@ -39,7 +39,9 @@ def index_to_pixels(x_index, y_index):
 
 
 def update_starter_screen():
-    WINDOW.blit(Consts.BACKGROUND, (0, 0))
+    background_data = pygame.transform.scale(Consts.BACKGROUND, (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
+    background = pygame.Rect((0, 0), (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
+    WINDOW.blit(background_data, (background.x, background.y))
     trash_array = Trash.get_trash()
     global robot_pixel_y
     global robot_pixel_x
@@ -68,7 +70,6 @@ def update_starter_screen():
     robot_data = pygame.transform.scale(Consts.TURTLE_BOT_IMAGE, (Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT))
     robot = pygame.Rect((robot_pixel_x, robot_pixel_y), (Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT))
     WINDOW.blit(robot_data, (robot.x, robot.y))
-
     pygame.display.update()
 
 
