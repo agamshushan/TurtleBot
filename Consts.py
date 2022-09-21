@@ -35,6 +35,9 @@ FPS = 60
 WINDOW_WIDTH, WINDOW_HEIGHT = 1050, 500
 WINDOW = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
+MSG_WINDOW_WIDTH, MSG_WINDOW_HEIGHT = 500, 500
+MSG_WINDOW = pygame.display.set_mode((MSG_WINDOW_WIDTH, MSG_WINDOW_HEIGHT))
+
 TRASH_IMAGES = {BAG: pygame.image.load(os.path.join("Bin", "bag.png")),
                 BOTTLE: pygame.image.load(os.path.join("Bin", "bottle.png")),
                 CAN: pygame.image.load(os.path.join("Bin", "can.png"))
