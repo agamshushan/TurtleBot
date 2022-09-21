@@ -16,7 +16,7 @@ def manage_game():
     while is_run:
         Screen.update_starter_screen()
         keys_pressed = pygame.key.get_pressed()
-        TurtleBot.move_bot(Screen.move_robot(keys_pressed))
+        Screen.move_robot(keys_pressed)
         Screen.slide_robot()
         TurtleBot.if_on_trash()
         if time.time() - start_time % time_between_trash_moves == 0:

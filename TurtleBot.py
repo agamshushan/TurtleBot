@@ -21,6 +21,7 @@ def move_bot(direction):
     elif direction == Consts.LEFT:
         if bot_loc[0] > 0:
             bot_loc[0] = bot_loc[0] - Consts.STEP
+    return bot_loc[0] != prev_loc[0] or bot_loc[1] != prev_loc[1]
 
 
 def if_on_trash():
