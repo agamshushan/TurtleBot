@@ -27,7 +27,7 @@ START_DIFF = 1
 
 # SCREEN:
 FPS = 60
-WINDOW_WIDTH, WINDOW_HEIGHT = 420, 400
+WINDOW_WIDTH, WINDOW_HEIGHT = 1050, 500
 WINDOW = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
 TRASH_IMAGES = {BAG: pygame.image.load(os.path.join("Bin", "bag.png")),
@@ -37,3 +37,7 @@ TRASH_IMAGES = {BAG: pygame.image.load(os.path.join("Bin", "bag.png")),
 TURTLE_BOT_IMAGE = pygame.image.load(os.path.join("Bin", "bot.png"))
 TURTLE_IMAGE = pygame.image.load(os.path.join("Bin", "turtle.png"))
 BACKGROUND = pygame.image.load(os.path.join("Bin", "sea.png"))
+
+ROBOT_WIDTH, ROBOT_HEIGHT = 50, 100
+TRASH_WIDTH, TRASH_HEIGHT = 50, 50
+TURTLE_WIDTH, TURTLE_HEIGHT = 100, 100
