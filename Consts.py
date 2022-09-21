@@ -50,3 +50,24 @@ BEACH_BACKGROUND = pygame.image.load(os.path.join("Bin", "beach.jpeg"))
 ROBOT_WIDTH, ROBOT_HEIGHT = 50, 100
 TRASH_WIDTH, TRASH_HEIGHT = 50, 50 
 TURTLE_WIDTH, TURTLE_HEIGHT = 100, 100
+
+#messeges
+WHITE = (255, 255, 255)
+FONT_NAME = "Calibri"
+LOSE_MESSAGE = "game over!"
+LOSE_FONT_SIZE = 100  # int(0.15 * WINDOW_WIDTH)
+LOSE_COLOR = WHITE
+LOSE_LOCATION = (0.4 * WINDOW_WIDTH, WINDOW_HEIGHT / 2 - (LOSE_FONT_SIZE / 2))
+
+PRESS_ANY_KEY = "Press any key to start"
+
+INFO_FIRST_STAGE = "Clean all the trash with your mouse"
+
+INFO_SECOND_STAGE = ["Move CleanerBot with arrow or wasd keys",
+                     "Clean the trash with CleanerBot before it gets to the innocent turtles",
+                     "You have 3 lives."]
+
+INFO_CLEANER_BOT = ["CleanerBot is made to clean the ocean.",
+                    "Over 100,000 sea animals die from plastic pollution each year.",
+                    "Every year, about 8 million tons of plastic waste escapes into the oceans from coastal nations.",
+                    "If CleanerBot becomes a real thing, it will help sea life and our planet as a whole"]
