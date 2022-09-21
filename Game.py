@@ -14,7 +14,7 @@ time_between_trash_moves = Consts.START_TIME_BETWEEN_TRASH
 def first_stage():
     global score
     while BeachTrash.count_trash() > 0:
-
+        pass
 
 
 def second_stage():
