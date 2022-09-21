@@ -5,7 +5,7 @@ import TurtleBot
 
 WINDOW = Consts.WINDOW
 MSG_WINDOW = Consts.MSG_WINDOW
-robot_pixel_x, robot_pixel_y = 0, 0
+robot_pixel_x, robot_pixel_y = TurtleBot.
 
 
 def move_robot(keys_pressed):
