@@ -4,7 +4,7 @@ import Trash
 import TurtleBot
 
 WINDOW = Consts.WINDOW
-MSG
+MSG_WINDOW = Const.MSG_WINDOW
 robot_pixel_x, robot_pixel_y = 0, 0
 
 
@@ -45,8 +45,9 @@ def update_starter_screen():
     global robot_pixel_x
 
     for i in range(Consts.TURTLE_AMOUNT):
+        row = trash_array[i]
         if i % 2 != 0:
-            row = trash_array[-1::-1]
+            row = trash_array[i][-1::-1]
             turtle_data = pygame.transform.rotate(pygame.transform.scale(Consts.TURTLE_IMAGE, (
                 Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT)), 90)
             turtle = pygame.Rect(index_to_pixels(0, i),
