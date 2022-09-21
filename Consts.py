@@ -55,11 +55,11 @@ TURTLE_WIDTH, TURTLE_HEIGHT = 100, 100
 WHITE = (255, 255, 255)
 FONT_NAME = "Calibri"
 LOSE_MESSAGE = "game over!"
-LOSE_FONT_SIZE = 20  # int(0.15 * WINDOW_WIDTH)
+LOSE_FONT_SIZE = 25  # int(0.15 * WINDOW_WIDTH)
 LOSE_COLOR = WHITE
-LOSE_LOCATION = (0.2 * WINDOW_WIDTH, WINDOW_HEIGHT / 2 - (LOSE_FONT_SIZE / 2))
+LOSE_LOCATION = (10, 200 + (LOSE_FONT_SIZE / 2))
 
-PLAY_INFO = ["Move CleanerBot with arrow or wasd keys",
+PLAY_INFO = ["Move CleanerBot with the arrows",
                      "Clean the trash with CleanerBot before it gets to the innocent turtles",
                      "You have 3 lives."]
 

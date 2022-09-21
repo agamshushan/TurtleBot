@@ -61,11 +61,11 @@ def update_starter_screen():
                 data = pygame.transform.scale(Consts.TRASH_IMAGES[row[j]], (Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
                 trash = pygame.Rect((index_to_pixels(j, i)[0], index_to_pixels(j, i)[1] + 25), (Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
                 WINDOW.blit(data, (trash.x, trash.y))
-    turtle_data = pygame.transform.rotate(pygame.transform.scale(Consts.TURTLE_IMAGE, (
-        Consts.TURTLE_WIDTH, Consts.TURTLE_HEIGHT)), 180)
-    turtle = pygame.Rect(index_to_pixels(19, i),
-                         (Consts.TURTLE_WIDTH, Consts.TURTLE_HEIGHT))
-    WINDOW.blit(turtle_data, (turtle.x, turtle.y))
+        turtle_data = pygame.transform.rotate(pygame.transform.scale(Consts.TURTLE_IMAGE, (
+            Consts.TURTLE_WIDTH, Consts.TURTLE_HEIGHT)), 180)
+        turtle = pygame.Rect(index_to_pixels(19, i),
+                             (Consts.TURTLE_WIDTH, Consts.TURTLE_HEIGHT))
+        WINDOW.blit(turtle_data, (turtle.x, turtle.y))
 
     robot_data = pygame.transform.scale(Consts.TURTLE_BOT_IMAGE, (Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT))
     robot = pygame.Rect((robot_pixel_x, robot_pixel_y), (Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT))
@@ -74,15 +74,17 @@ def update_starter_screen():
 
 
 def draw_lose_message(score):
-    draw_message(Consts.LOSE_MESSAGE + "\n" + score, Consts.LOSE_FONT_SIZE,
-                 Consts.LOSE_COLOR, Consts.LOSE_LOCATION, Consts.BACKGROUND)
+    msg = [Consts.LOSE_MESSAGE, score]
+    draw_message(msg)
 
-def draw_message(message, font_size, color, location, background_img):
+def draw_message(message):
     pygame.font.init()
-
-    WINDOW.blit(background_img, (0, 0))
-    font = pygame.font.SysFont(Consts.FONT_NAME, font_size)
-    text_img = font.render(message, True, color)
-    WINDOW.blit(text_img, location)
+    background_data = pygame.transform.scale(Consts.BACKGROUND, (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
+    background = pygame.Rect((0, 0), (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
+    WINDOW.blit(background_data, (background.x, background.y))
+    for i in range(len(message)):
+        font = pygame.font.SysFont(Consts.FONT_NAME, Consts.LOSE_FONT_SIZE)
+        text_img = font.render(message[i], True, Consts.LOSE_COLOR)
+        WINDOW.blit(text_img, (Consts.LOSE_LOCATION[0], Consts.LOSE_LOCATION[1] + i*40))
 
     pygame.display.update()

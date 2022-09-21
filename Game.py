@@ -47,3 +47,5 @@ def manage_game():
         print(is_run)
     return score
 
+
+
