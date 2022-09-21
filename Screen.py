@@ -37,6 +37,7 @@ def index_to_pixels(x_index, y_index):
     return (x_index * 50, y_index * 100 + 100)
 
 
+
 def update_starter_screen():
     WINDOW.blit(Consts.BACKGROUND_IMG, (0, 0))
     trash_array = Trash.get_trash()
