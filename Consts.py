@@ -53,6 +53,7 @@ TURTLE_WIDTH, TURTLE_HEIGHT = 100, 100
 
 #messeges
 WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
 FONT_NAME = "Calibri"
 LOSE_MESSAGE = "Game over!"
 LOSE_FONT_SIZE = 25  # int(0.15 * WINDOW_WIDTH)
