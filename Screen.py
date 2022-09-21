@@ -4,6 +4,7 @@ import Trash
 import TurtleBot
 
 WINDOW = Consts.WINDOW
+MSG
 robot_pixel_x, robot_pixel_y = 0, 0
 
 
@@ -38,7 +39,7 @@ def index_to_pixels(x_index, y_index):
 
 
 def update_starter_screen():
-    WINDOW.blit(Consts.BACKGROUND_IMG, (0, 0))
+    WINDOW.blit(Consts.BACKGROUND, (0, 0))
     trash_array = Trash.get_trash()
     global robot_pixel_y
     global robot_pixel_x
@@ -67,5 +68,36 @@ def update_starter_screen():
     robot_data = pygame.transform.scale(Consts.TURTLE_BOT_IMAGE, (Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT))
     robot = pygame.Rect((robot_pixel_x, robot_pixel_y), (Consts.ROBOT_WIDTH, Consts.ROBOT_HEIGHT))
     WINDOW.blit(robot_data, (robot.x, robot.y))
+
+    pygame.display.update()
+
+
+def draw_lose_message():
+    draw_message(Consts.LOSE_MESSAGE, Consts.LOSE_FONT_SIZE,
+                 Consts.LOSE_COLOR, Consts.LOSE_LOCATION)
+
+
+def draw_win_message():
+    draw_message(Consts.WIN_MESSAGE, Consts.WIN_FONT_SIZE,
+                 Consts.WIN_COLOR, Consts.WIN_LOCATION)
+
+
+def draw_message(message, font_size, color, location, backgound_img):
+    pygame.font.init()
+
+    WINDOW.blit(Consts.BACKGROUND_IMG, (0, 0))
+
+    if message == "You Lost!":
+        img_data = pygame.transform.scale(Consts.LOSE_IMAGE, (315, 270))
+        img = pygame.Rect((50, 100), (315, 270))
+        WINDOW.blit(img_data, (img.x, img.y))
+    elif message == "You Won!":
+        img_data = pygame.transform.scale(Consts.WIN_IMAGE, (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
+        img = pygame.Rect((0, 0), (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
+        WINDOW.blit(img_data, (0, 0))
+
+    font = pygame.font.SysFont(Consts.FONT_NAME, font_size)
+    text_img = font.render(message, True, color)
+    WINDOW.blit(text_img, location)
 
     pygame.display.update()
