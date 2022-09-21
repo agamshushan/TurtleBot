@@ -4,7 +4,7 @@ import Trash
 import TurtleBot
 
 WINDOW = Consts.WINDOW
-MSG_WINDOW = Const.MSG_WINDOW
+MSG_WINDOW = Consts.MSG_WINDOW
 robot_pixel_x, robot_pixel_y = 0, 0
 
 
@@ -61,8 +61,7 @@ def update_starter_screen():
             WINDOW.blit(turtle_data, (turtle.x, turtle.y))
         for j in range(len(row)):
             if j != Consts.EMPTY:
-                data = pygame.transform.scale(Consts.TRASH_IMAGES[j], (
-                Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
+                data = pygame.transform.scale(Consts.TRASH_IMAGES[j], (Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
                 trash = pygame.Rect((index_to_pixels(j, i)[0], index_to_pixels(j, i)[1] + 25), (Consts.TRASH_WIDTH, Consts.TRASH_HEIGHT))
                 WINDOW.blit(data, (trash.x, trash.y))
 
